@@ -1,0 +1,52 @@
+<div class="admin-panel">
+  <form [formGroup]="englishTextForm" (ngSubmit)="submitForm()">
+    <div>
+      <label>Title:</label>
+      <input formControlName="title" type="text">
+    </div>
+    <div>
+      <label>Content:</label>
+      <textarea formControlName="content"></textarea>
+    </div>
+    <div>
+      <label>Content Level:</label>
+      <input formControlName="content_level" type="text">
+    </div>
+    <div>
+      <label>Image Path:</label>
+      <input formControlName="mainImagePath" type="text">
+    </div>
+    
+    <div formArrayName="translations">
+      <h3>Translations</h3>
+      <div *ngFor="let translation of translations.controls; let i = index" [formGroupName]="i">
+        <label>Translation:</label>
+        <textarea formControlName="translation" type="text"></textarea>
+        <label>Language Code:</label>
+        <input formControlName="languageCode" type="text">
+        <button type="button" (click)="removeTranslationField(i)">Remove Translation</button>
+      </div>
+      <button type="button" (click)="addTranslationField()">Add Translation</button>
+    </div>
+    
+    <button type="submit" [disabled]="!englishTextForm.valid">Add Text</button>
+  </form>
+
+  <table *ngIf="englishTexts.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let text of englishTexts">
+        <td>{{ text.text_id }}</td>
+        <td>{{ text.title }}</td>
+        <td>
+          <button (click)="deleteTextById(text.text_id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

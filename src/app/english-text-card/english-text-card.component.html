@@ -1,0 +1,12 @@
+<a [routerLink]="['/texts', text.text_id]" class="english-text-card">
+  <div class="card">
+    <img [src]="text.mainImagePath" alt="Main image" class="card-image">
+    <div class="card-body">
+      <h3 class="card-title">{{ text.title }}</h3>
+      <p class="card-level"><strong>Level:</strong> {{ text.content_level }}</p>
+    </div>
+    <div class="card-footer">
+
+    </div>
+  </div>
+</a>

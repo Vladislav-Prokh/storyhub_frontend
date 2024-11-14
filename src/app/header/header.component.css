@@ -1,0 +1,74 @@
+#headerPage {
+        --header-height: 7vh;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        z-index: 1000;
+        background-color: #FFD966;
+        align-items: center; 
+        padding: 0 10px;
+      }
+      
+      #headerLogo {
+        height: 100%;
+        width: 15%;
+        overflow: hidden;
+        left: 0;
+      }
+      
+      #headerLogo img {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      
+      #buttonsPanel {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 10px; 
+      }
+      
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        background-color: #f8c93b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 2vh;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .button i {
+        font-size: 2vh;
+      }
+      
+      .button:hover {
+        background-color: #ffb800;
+        transform: scale(1.05); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      #loginBtn {
+        background-color: #4CAF50;
+      }
+      
+      #registerBtn {
+        background-color: #f8c93b;
+      }
+      
+      #logoutBtn {
+        background-color: #e74c3c;
+      }
+      a{
+        text-decoration:none;
+      }
+      

@@ -1,0 +1,23 @@
+<div class="text-container" *ngIf="currentText">
+  <img [src]="currentText.mainImagePath" alt="Image" class="text-image">
+  <label for="language-select">Translation lang:</label>
+  <select id="language-select" (change)="onLanguageCodeChange($event)">
+    <option *ngFor="let code of getAllLanguageCodesFromTranslations(); let i = index" [value]="i">
+      {{ code }}
+    </option>
+  </select>
+  <h1 class="text-title">{{ currentText.title }}</h1>
+  <div *ngIf="contentOfText && currentTranslationContent">
+    <span *ngFor="let phrase of contentOfText; let i = index" class="text-phrase">
+      <span 
+        (mouseover)="showTranslation(i)" 
+        (mouseout)="hideTranslation()" 
+        [attr.title]="currentTranslationContent[i]">
+        {{ phrase }}
+      </span>
+      <span *ngIf="currentTranslationIndex === i" class="translation">
+        {{ currentTranslationContent[i] }}
+      </span>
+    </span>
+  </div>
+</div>

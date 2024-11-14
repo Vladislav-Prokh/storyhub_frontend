@@ -1,0 +1,19 @@
+<div id = "headerPage">
+    <div id = "headerLogo">
+        <a href = "/home"><img src = "../../assets/logo.png"></a>
+    </div>
+    <div id = "buttonsPanel">
+
+        <div id="buttonsPanel">
+         
+            <a *ngIf="isUserAutorized"  class="button" id="logoutBtn" 
+            (click)="onLogoutClick()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+            <a *ngIf="!isUserAutorized" routerLink="/login" class="button" id="loginBtn">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>

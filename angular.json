@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "73663134-b3e3-43d9-ba7e-66970e302f18"
   }
 }
